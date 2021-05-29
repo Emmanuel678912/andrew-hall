@@ -4,27 +4,31 @@
 
 {% block content %}
     <div class="container">
-        <form>
+        <form method="POST">
+            {% csrf_token %}
             <div class="row">
                 <div class="col">
-                    <input type="text" style="background-color: yellow;" class="form-control" >
+                    <input type="text" style="background-color: yellow;" class="form-control" name="first">
                 </div>
                 -
                 <div class="col">
-                    <input type="text" style="background-color: yellow;" class="form-control" >
+                    <input type="text" style="background-color: yellow;" class="form-control" name="second">
                 </div>
                 -
                 <div class="col">
-                    <input type="text" style="background-color: yellow;" class="form-control" >
+                    <input type="text" style="background-color: yellow;" class="form-control" name="third">
                 </div>
                 -
                 <div class="col">
-                    <input type="text" style="background-color: yellow;" class="form-control" >
+                    <input type="text" style="background-color: yellow;" class="form-control" name="fourth">
                 </div>
                 /
                 <div class="col">
-                    <input type="text" style="background-color: yellow;" class="form-control" >
+                    <input type="text" style="background-color: yellow;" class="form-control" name="subnet-mask">
                 </div>
+            </div>
+            <div class="row my-5">
+                <center><button class="btn btn-primary" type="submit" value="Submit">Submit</button></center>
             </div>
         </form>
     </div>
