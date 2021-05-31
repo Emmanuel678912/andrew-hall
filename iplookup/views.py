@@ -10,16 +10,37 @@ def input_page(request):
         fourth_octet = request.POST.get('fourth')
         subnet_mask = request.POST.get('subnet-mask')
 
+        loop_count = 0
+
+        third_octet_count = 0 
+
+        fourth_octet_count = 0 
         for i in range(256):
-            table, created = TableD.objects.get_or_create(
+            loop_count += 1
+            if loop_count < 129:
+                table, created = TableD.objects.get_or_create(
+                    first_octet=first_octet,
+                    second_octet=second_octet,
+                    third_octet=third_octet,
+                    fourth_octet=str(int(fourth_octet) + int(i)),
+                    subnet_mask=subnet_mask
+                )
+
+            else:
+                third_octet_count += 1
+                
+                table, created = TableD.objects.get_or_create(
                 first_octet=first_octet,
                 second_octet=second_octet,
-                third_octet=third_octet,
+                third_octet=str(int(third_octet) + third_octet_count),
                 fourth_octet=str(int(fourth_octet) + int(i)),
                 subnet_mask=subnet_mask
             )
 
+           
+
             table.save()
+        
 
     context = {}
     return render(request, 'input-page.html', context)
