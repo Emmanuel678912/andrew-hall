@@ -4,15 +4,20 @@
 
 {% block content %}
 <div class="container">
-    <form>
+    <form method="POST">
+        {% csrf_token %}
         <div class="row">
             <label>Vendor</label>
-            <input type="text" style="background-color: yellow;" class="form-control" >
+            <input type="text" style="background-color: yellow;" class="form-control" name="vendor">
         </div>
 
         <div class="row">
             <label>Host</label>
-            <input type="text" style="background-color: blue;" class="form-control" >
+            <input type="text" style="background-color: blue;" class="form-control" name="host">
+        </div>
+
+        <div class="row">
+            <center><button class="btn btn-primary" type="submit" value="Submit">Submit</button></center>
         </div>
     </form>
 </div>
