@@ -4,3 +4,8 @@
     width: 500px;
     border: solid;
 }
+
+.input-append .btn.dropdown-toggle {
+    float: none;
+    background-color: yellow;
+}

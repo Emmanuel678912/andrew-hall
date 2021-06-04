@@ -146,10 +146,46 @@ def input_page(request):
 # Handles the logic for the generate page
 def generate_page(request):
 
+    # grab data from each table
+    tableg = TableG.objects.all()
+    tableh = TableH.objects.all()
+
+    tablea = TableA.objects.all()
+    tableb = TableA.objects.all()
+
     # gets the vendor name and host name 
     if request.method == 'POST':
         vendor = request.POST.get('vendor')
         hostname = request.POST.get('host')
+
+        # tableg_vendor = tableg[0].filter(vendor) 
+
+        # print(tableg_vendor) 
+        
+        # Where TableG_c2_rX = vendorname print TableG_c3_r1 + Hostname   
+        for i in tableg:
+            if vendor == i.column2:
+                print(str(i.column3[0] + hostname))
+
+        # Where TableH_c2_rX = vendorname print TableH_c3_rX + TableA_c2_r1 (string combination)
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column3) + str(tablea[0].column2[0]))
+        
+        # Where TableH_c2_rX = vendorname print TableH_c4_rX + TableA_c3_r1 (string combination)
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column4) + str(tablea[0].column3[0]))
+
+        # Where TableH_c2_rX = vendorname print TableH_c5_rX + TableB_c2_r1 (string combination)
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column5) + str(tableb[0].column2[0]))
+
+
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column5) + str(tableb[0].column2[0]))
 
     context = {}
 
