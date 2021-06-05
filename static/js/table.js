@@ -1,0 +1,2 @@
+tablea = document.getElementById('tablea')
+

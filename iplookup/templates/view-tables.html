@@ -5,130 +5,99 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <table class="table">
-                <thead>
-                    <th scope="row">Table A</th>
+          <p class="h1">Table A</p>
+            <table class="table" id="tablea">
+                <thead>   
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">Column 2</th>
+                    <th scope="col">Column 3</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for row in a %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.column2}}</td>
+                    <td>{{row.column3}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
 
         <div class="row">
+          <p class="h1">Table B</p>
+
             <table class="table">
                 <thead>
-                  <th scope="row">Table B</th>
-
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">Column 2</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for row in b %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.column2}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
 
         <div class="row">
+          <p class="h1">Table C</p>
             <table class="table">
                 <thead>
-                  <th scope="row">Table C</th>
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">Column 2</th>
+                    <th scope="col">Column 3</th>
+                    <th scope="col">Column 4</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for row in c %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.column2}}</td>
+                    <td>{{row.column3}}</td>
+                    <td>{{row.column4}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
 
         <div class="row">
+          <p class="h1">Table D</p>
             <table class="table">
                 <thead>
-                    <th scope="row">Table D</th>
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">First Octet</th>
+                    <th scope="col">Second Octet</th>
+                    <th scope="col">Third Octet</th>
+                    <th scope="col">Fourth Octet</th>
+                    <th scope="col">Subnet Mask</th>
+                    <th scope="col">Host</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for row in d %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.first_octet}}</td>
+                    <td>{{row.second_octet}}</td>
+                    <td>{{row.third_octet}}</td>
+                    <td>{{row.fourth_octet}}</td>
+                    <td>{{row.subnet_mask}}</td>
+                    <td>{{row.host}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
 
         <div class="row">
+          <p class="h1">Table E</p>
+
             <table class="table">
                 <thead>
-                    <th scope="row">Table E</th>
                   <tr>
                     <th scope="col">1</th>
                   </tr>
@@ -156,10 +125,9 @@
         </div>
         
         <div class="row">
+          <p class="h1">Table F</p>
             <table class="table">
                 <thead>
-                    <th scope="row">Table F</th>
-
                   <tr>
                     <th scope="col">1</th>
                   </tr>
@@ -187,9 +155,9 @@
         </div>
         
         <div class="row">
+          <p class="h1">Table G</p>
             <table class="table">
                 <thead>
-                    <th scope="row">Table G</th>
                   <tr>
                     <th scope="col">1</th>
                   </tr>
@@ -217,9 +185,9 @@
         </div>
         
         <div class="row">
+          <p class="h1">Table H</p>
             <table class="table">
                 <thead>
-                    <th scope="row">Table H</th>
                   <tr>
                     <th scope="col">1</th>
                   </tr>

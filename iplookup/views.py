@@ -153,6 +153,11 @@ def generate_page(request):
     tablea = TableA.objects.all()
     tableb = TableA.objects.all()
 
+    tabled = TableD.objects.all()
+    tablee = TableE.objects.all()
+    tablef = TableF.objects.all()
+
+
     # gets the vendor name and host name 
     if request.method == 'POST':
         vendor = request.POST.get('vendor')
@@ -182,10 +187,83 @@ def generate_page(request):
             if vendor == i.column2:
                 print(str(i.column5) + str(tableb[0].column2[0]))
 
+        # Where TableH_c2_rX = vendorname print TableH_c10_rX
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column10))
+
+        # Where TableH_c2_rX = vendorname print TableH_c11_rX + TableD_first_octet_r1.TableD_second_octet_r1. TableD_third_octet_r1. TableD_fourth_octet_r1/32 (string combination) and set TableD_host_r1 = Hostname
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column11) + ' ' + str(tabled[0].first_octet) + '.' + str(tabled[0].second_octet) + '.' + str(tabled[0].third_octet) + '.' + str(tabled[0].fourth_octet) + '/32')
+
+                id = tabled[0].id
+
+                t = tabled.get(id=id)
+
+                t.host = hostname
+
+                t.save()
+
+        # Where TableH_c2_rX = vendorname print TableH_c12_rX
 
         for i in tableh:
             if vendor == i.column2:
-                print(str(i.column5) + str(tableb[0].column2[0]))
+                print(str(i.column12))
+
+        # Where TableH_c2_rX = vendorname print TableH_c13_rX + TableE_first_octet_r1.TableE_second_octet_r1. TableE_third_octet_r1. TableE_fourth_octet_r1/31 (string combination) and set TableE_host_r1 = Hostname
+
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column13) + ' ' + str(tablee[0].first_octet) + '.' + str(tablee[0].second_octet) + '.' + str(tablee[0].third_octet) + '.' + str(tablee[0].fourth_octet) + '/31')
+
+                id = tablee[0].id
+
+                t = tablee.get(id=id)
+
+                t.host = hostname
+
+                t.save()
+
+        # Where TableH_c2_rX = vendorname print TableH_c14_rX
+
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column14))
+
+        # Where TableH_c2_rX = vendorname print TableH_c15_rX + TableE_first_octet_r2.TableE_second_octet_r2. TableE_third_octet_r2. TableE_fourth_octet_r2/31 (string combination) and set TableE_host_r2 = Hostname
+
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column15) + ' ' + str(tablee[1].first_octet) + '.' + str(tablee[1].second_octet) + '.' + str(tablee[1].third_octet) + '.' + str(tablee[1].fourth_octet) + '/31')
+
+                id = tablee[1].id
+
+                t = tablee.get(id=id)
+
+                t.host = hostname
+
+                t.save()
+
+        # Where TableH_c2_rX = vendorname print TableH_c16_rX
+
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column16))
+
+        # Where TableH_c2_rX = vendorname print TableH_c17_rX + TableF_first_octet_r1.TableF_second_octet_r1. TableF_third_octet_r1. TableF_fourth_octet_r1/TableF_variable_r1 (string combination) and set TableE_host_r1 = Hostname
+
+        for i in tableh:
+            if vendor == i.column2:
+                print(str(i.column17) + ' ' + str(tablef[0].first_octet) + '.' + str(tablef[0].second_octet) + '.' + str(tablef[0].third_octet) + '.' + str(tablef[0].fourth_octet) + '/' + str(tablef[0].variable))
+
+                id = tablef[0].id
+
+                t = tablef.get(id=id)
+
+                t.host = hostname
+
+                t.save()
 
     context = {}
 
@@ -193,7 +271,25 @@ def generate_page(request):
 
 def view_tables(request):
 
-    context = {}
+    tablea = TableA.objects.all()
+    tableb = TableA.objects.all()
+    tablec = TableC.objects.all()
+    tabled = TableD.objects.all()
+    tablee = TableE.objects.all()
+    tablef = TableF.objects.all()
+    tableg = TableG.objects.all()
+    tableh = TableH.objects.all()
+
+    context = {
+        'a' : tablea,
+        'b' : tableb,
+        'c' : tablec,
+        'd' : tabled,
+        'e' : tablee,
+        'f' : tablef,
+        'g' : tableg,
+        'h' : tableh
+    }
 
     return render(request, 'view-tables.html', context)
 

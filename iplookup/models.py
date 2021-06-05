@@ -24,6 +24,7 @@ class TableD(models.Model):
     third_octet = models.IntegerField(null=True, blank=True)
     fourth_octet = models.IntegerField(null=True, blank=True)
     subnet_mask = models.IntegerField(null=True, blank=True)
+    host = models.CharField(max_length=255, null=True, blank=True)
 
 class TableE(models.Model):
     first_octet = models.IntegerField(null=True, blank=True)
@@ -31,6 +32,7 @@ class TableE(models.Model):
     third_octet = models.IntegerField(null=True, blank=True)
     fourth_octet = models.IntegerField(null=True, blank=True)
     subnet_mask = models.IntegerField(null=True, blank=True)
+    host = models.CharField(max_length=255, null=True, blank=True)
 
 class TableF(models.Model):
     first_octet = models.IntegerField(null=True, blank=True)
