@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-j4on4@_=x=a@odnwa5yl2cn&)@8yq)l@wl0$#o9j9p=04xstvo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['andrewhall-ipaddressing.herokuapp.com', 'localhost:8000']
 
 
 # Application definition
@@ -143,3 +143,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+
+if os.getcwd() == '/app':
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    DEBUG=False
