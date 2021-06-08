@@ -6,14 +6,22 @@
     <div class="container">
         <div class="row">
           <p class="h1">Table A</p>
-            <table class="table" id="tablea">
-                <thead>   
+            <table class="table table-info table-bordered">
+                <thead class="">   
                   <tr>
                     <th scope="col">Column 2</th>
                     <th scope="col">Column 3</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="labels">
+                  <tr>
+                    <td colspan="5">
+                      <label for="table-a">Click to collapse rows</label>
+                      <input type="checkbox" name="table-a" id="table-a" data-toggle="toggle">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class="table hide">
                   {% for row in a %}
                   <tr>
                     <td>{{row.column2}}</td>
@@ -27,13 +35,21 @@
         <div class="row">
           <p class="h1">Table B</p>
 
-            <table class="table">
-                <thead>
+            <table class="table table-info table-bordered">
+                <thead class="">
                   <tr>
                     <th scope="col">Column 2</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="labels">
+                  <tr>
+                    <td colspan="5">
+                      <label for="table-b">Click to collapse rows</label>
+                      <input type="checkbox" name="table-b" id="table-b" data-toggle="toggle">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class="table hide">
                   {% for row in b %}
                   <tr>
                     <td>{{row.column2}}</td>
@@ -45,7 +61,7 @@
 
         <div class="row">
           <p class="h1">Table C</p>
-            <table class="table">
+            <table class="table table-info table-bordered">
                 <thead>
                   <tr>
                     <th scope="col">Column 2</th>
@@ -54,6 +70,12 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <td colspan="5">
+                    <label for="table-c">Click to collapse rows</label>
+                    <input type="checkbox" name="table-c" id="table-c" data-toggle="toggle">
+                  </td>
+                </tbody>
+                <tbody class="table hide">
                   {% for row in c %}
                   <tr>
                     <td>{{row.column2}}</td>
@@ -67,7 +89,7 @@
 
         <div class="row">
           <p class="h1">Table D</p>
-            <table class="table">
+            <table class="table table-info table-bordered">
                 <thead>
                   <tr>
                     <th scope="col">First Octet</th>
@@ -79,6 +101,12 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <td colspan="5">
+                    <label for="table-d">Collapse Table</label>
+                    <input type="checkbox" name="table-d" id="table-d" data-toggle="toggle">
+                  </td>
+                </tbody>
+                <tbody class="table hide">
                   {% for row in d %}
                   <tr>
                     <td>{{row.first_octet}}</td>
@@ -96,123 +124,155 @@
         <div class="row">
           <p class="h1">Table E</p>
 
-            <table class="table">
+            <table class="table table-info table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">First Octet</th>
+                    <th scope="col">Second Octet</th>
+                    <th scope="col">Third Octet</th>
+                    <th scope="col">Fourth Octet</th>
+                    <th scope="col">Subnet Mask</th>
+                    <th scope="col">Host</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <td colspan="5">
+                    <label for="table-e">Click to collapse rows</label>
+                    <input type="checkbox" name="table-e" id="table-e" data-toggle="toggle">
+                  </td>
+                </tbody>
+                <tbody class="table hide">
+                  {% for row in e %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.first_octet}}</td>
+                    <td>{{row.second_octet}}</td>
+                    <td>{{row.third_octet}}</td>
+                    <td>{{row.fourth_octet}}</td>
+                    <td>{{row.subnet_mask}}</td>
+                    <td>{{row.host}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
         
         <div class="row">
           <p class="h1">Table F</p>
-            <table class="table">
+            <table class="table table-info table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">First Octet</th>
+                    <th scope="col">Second Octet</th>
+                    <th scope="col">Third Octet</th>
+                    <th scope="col">Fourth Octet</th>
+                    <th scope="col">Subnet Mask</th>
+                    <th scope="col">Host</th>
+                    <th scope="col">Variable</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <td colspan="5">
+                    <label for="table-f">Click to collapse rows</label>
+                    <input type="checkbox" name="table-f" id="table-f" data-toggle="toggle">
+                  </td>
+                </tbody>
+                <tbody class="table hide">
+                  {% for row in f %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.first_octet}}</td>
+                    <td>{{row.second_octet}}</td>
+                    <td>{{row.third_octet}}</td>
+                    <td>{{row.fourth_octet}}</td>
+                    <td>{{row.subnet_mask}}</td>
+                    <td>{{row.host}}</td>
+                    <td>{{row.variable}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
         
         <div class="row">
           <p class="h1">Table G</p>
-            <table class="table">
+            <table class="table table-info table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">Column 2</th>
+                    <th scope="col">Column 3</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <td colspan="5">
+                    <label for="table-g">Click to collapse rows</label>
+                    <input type="checkbox" name="table-g" id="table-g" data-toggle="toggle">
+                  </td>
+                </tbody>
+                <tbody class="table hide">
+                  {% for row in g %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.column2}}</td>
+                    <td>{{row.column3}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
         
         <div class="row">
           <p class="h1">Table H</p>
-            <table class="table">
+            <table class="table table-sm table-info table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">1</th>
+                    <th scope="col">Column 2</th>
+                    <th scope="col">Column 3</th>
+                    <th scope="col">Column 4</th>
+                    <th scope="col">Column 5</th>
+                    <th scope="col">Column 6</th>
+                    <th scope="col">Column 7</th>
+                    <th scope="col">Column 8</th>
+                    <th scope="col">Column 9</th>
+                    <th scope="col">Column 10</th>
+                    <th scope="col">Column 11</th>
+                    <th scope="col">Column 12</th>
+                    <th scope="col">Column 13</th>
+                    <th scope="col">Column 14</th>
+                    <th scope="col">Column 15</th>
+                    <th scope="col">Column 16</th>
+                    <th scope="col">Column 17</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class>
+                  <td colspan="5">
+                    <label for="table-h">Click to collapse rows</label>
+                    <input type="checkbox" name="table-h" id="table-h" data-toggle="toggle">
+                  </td>
+                </tbody>
+                <tbody class="table hide">
+
+                  {% for row in h %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{row.column2}}</td>
+                    <td>{{row.column3}}</td>
+                    <td>{{row.column4}}</td>
+                    <td>{{row.column5}}</td>
+                    <td>{{row.column6}}</td>
+                    <td>{{row.column7}}</td>
+                    <td>{{row.column8}}</td>
+                    <td>{{row.column9}}</td>
+                    <td>{{row.column10}}</td>
+                    <td>{{row.column11}}</td>
+                    <td>{{row.column12}}</td>
+                    <td>{{row.column13}}</td>
+                    <td>{{row.column14}}</td>
+                    <td>{{row.column15}}</td>
+                    <td>{{row.column16}}</td>
+                    <td>{{row.column17}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                 {% endfor %}
                 </tbody>
               </table>
         </div>
-
     </div>
+
+    
 {% endblock %}

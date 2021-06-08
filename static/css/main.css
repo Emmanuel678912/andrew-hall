@@ -10,6 +10,11 @@
     background-color: yellow;
 }
 
-#tablea {
-    
+[data-toggle="toggle"] {
+	display: none;
 }
+
+.label tr td label {
+	display: block;
+}
+

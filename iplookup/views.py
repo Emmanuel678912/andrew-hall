@@ -4,6 +4,8 @@ from .models import *
 # handles the data for input page
 def input_page(request):
 
+    choices = [1, 2]
+
     # gets the input data from the form
     if request.method == 'POST':
         # gets all input data
@@ -140,11 +142,13 @@ def input_page(request):
         tableg.save()
         
 
-    context = {}
+    context = {'c' : choices}
     return render(request, 'input-page.html', context)
 
 # Handles the logic for the generate page
 def generate_page(request):
+
+    choices = [1, 2]
 
     # grab data from each table
     tableg = TableG.objects.all()
@@ -152,6 +156,7 @@ def generate_page(request):
 
     tablea = TableA.objects.all()
     tableb = TableA.objects.all()
+    tablec = TableC.objects.all()
 
     tabled = TableD.objects.all()
     tablee = TableE.objects.all()
@@ -186,6 +191,35 @@ def generate_page(request):
         for i in tableh:
             if vendor == i.column2:
                 print(str(i.column5) + str(tableb[0].column2[0]))
+
+        # Where TableH_c2_rX = vendorname AND TableC_c4 = value1, print TableH_c6_rX + TableC_c2 _r1 (string combination)
+
+        for i in tableh:
+            for x in tablec:
+                if vendor == i.column2 and x.column4 == choices[0]:
+                    print(str(i.column6) + str(tablec[0].column2[0]))
+        
+        # Where TableH_c2_rX = vendorname AND TableC_c4 = value1, print TableH_c7_rX + TableC_c3_r1 (string combination)
+
+        for i in tableh:
+            for x in tablec:
+                if vendor == i.column2 and x.column4 == choices[0]:
+                    print(str(i.column7) + str(tablec[0].column3[0]))
+
+        # Where TableH_c2_rX = vendorname AND TableC_c4 = value2, print TableH_c8_rX + TableC_c2_r1 (string combination)
+
+        for i in tableh:
+            for x in tablec:
+                if vendor == i.column2 and x.column4 == choices[1]:
+                    print(str(i.column8) + str(tablec[0].column2[0]))
+
+        # Where TableH_c2_rX = vendorname AND TableC_c4 = value2, print TableH_c9_rX + TableC_c3_r1 (string combination)
+
+        for i in tableh:
+            for x in tablec:
+                if vendor == i.column2 and x.column4 == choices[1]:
+                    print(str(i.column9) + str(tablec[0].column3[0]))
+
 
         # Where TableH_c2_rX = vendorname print TableH_c10_rX
         for i in tableh:
