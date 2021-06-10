@@ -3,7 +3,7 @@
 This is a README file explaining how to use this application.
 
 # Installation
-* To use this project or open it you will need to have Python installed on your computer. Ideally, get [Python 3.9.2] (https://www.python.org/downloads/release/python-392/) because that's the version that I used.
+* To use this project or open it you will need to have Python installed on your computer. Ideally, get [Python 3.9.2](https://www.python.org/downloads/release/python-392/) because that's the version that I used.
 
 1. Click the green "Code" button
 2. Either Click Download Zip or follow the cloning instructions
