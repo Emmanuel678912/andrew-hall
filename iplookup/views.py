@@ -4,7 +4,7 @@ from .models import *
 # handles the data for input page
 def input_page(request):
 
-    choices = [1, 2]
+    choices = [1, 2] # use this to change values 1 and 2
 
     # gets the input data from the form
     if request.method == 'POST':
@@ -148,7 +148,7 @@ def input_page(request):
 # Handles the logic for the generate page
 def generate_page(request):
 
-    choices = [1, 2]
+    choices = [1, 2] # use this to change values 1 and 2
 
     # grab data from each table
     tableg = TableG.objects.all()
@@ -303,6 +303,7 @@ def generate_page(request):
 
     return render(request, 'generate-page.html', context)
 
+# handles the logic for the view tables page
 def view_tables(request):
 
     tablea = TableA.objects.all()
