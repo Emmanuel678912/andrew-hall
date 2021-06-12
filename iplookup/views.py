@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
 
 # handles the data for input page
 def input_page(request):
 
     choices = [1, 2] # use this to change values 1 and 2
+
+    form = TableCForm() # used to create dropdown for Table C Column 4
+
 
     # gets the input data from the form
     if request.method == 'POST':
@@ -13,17 +17,24 @@ def input_page(request):
         tablea_column3 = request.POST.get('a-column-3')
 
         tableb_column2 = request.POST.get('b-column-2')
-
-        tablec_column2 = request.POST.get('c-column-2')
-        tablec_column3 = request.POST.get('c-column-3')
-        tablec_column4 = request.POST.get('c-column-4')
-
         
-        first_octet = request.POST.get('first')
-        second_octet = request.POST.get('second')
-        third_octet = request.POST.get('third')
-        fourth_octet = request.POST.get('fourth')
-        subnet_mask = request.POST.get('subnet-mask')
+        table_d_first_octet = request.POST.get('table-d-first')
+        table_d_second_octet = request.POST.get('table-d-second')
+        table_d_third_octet = request.POST.get('table-d-third')
+        table_d_fourth_octet = request.POST.get('table-d-fourth')
+        table_d_subnet_mask = request.POST.get('table-d-subnet-mask')
+
+        table_e_first_octet = request.POST.get('table-e-first')
+        table_e_second_octet = request.POST.get('table-e-second')
+        table_e_third_octet = request.POST.get('table-e-third')
+        table_e_fourth_octet = request.POST.get('table-e-fourth')
+        table_e_subnet_mask = request.POST.get('table-e-subnet-mask')
+
+        table_f_first_octet = request.POST.get('table-f-first')
+        table_f_second_octet = request.POST.get('table-f-second')
+        table_f_third_octet = request.POST.get('table-f-third')
+        table_f_fourth_octet = request.POST.get('table-f-fourth')
+        table_f_subnet_mask = request.POST.get('table-f-subnet-mask')
         variable = request.POST.get('variable')
 
         tableg_column2 = request.POST.get('g-column-2')
@@ -31,9 +42,11 @@ def input_page(request):
 
         loop_count = 0
 
-        third_octet_count = 0 
+        third_octet_count = 1
 
-        fourth_octet_count = 2
+        fourth_octet_count = 0
+
+        fourth_octet_count2 = 0
 
         # Saves data to Table A
         tablea, created = TableA.objects.get_or_create(
@@ -51,87 +64,90 @@ def input_page(request):
         tableb.save()
 
         # Saves data to Table C
-        tablec, created = TableC.objects.get_or_create(
-            column2=tablec_column2,
-            column3=tablec_column3,
-            column4=tablec_column4
-        )
-        
-        tablec.save()
+        form = TableCForm(request.POST)
+
+        if form.is_valid:
+            form.save()
 
         # Saves data to table D
         for i in range(256):
+
+            
+            table, created = TableD.objects.get_or_create(
+                    first_octet=table_d_first_octet,
+                    second_octet=table_d_second_octet,
+                    third_octet=table_d_third_octet,
+                    fourth_octet=str(int(table_d_fourth_octet) + loop_count),
+                    subnet_mask=table_d_subnet_mask
+
+            )
+
             loop_count += 1
 
-            try:
-                table, created = TableD.objects.get_or_create(
-                        first_octet=first_octet,
-                        second_octet=second_octet,
-                        third_octet=third_octet,
-                        fourth_octet=str(int(fourth_octet) + loop_count),
-                        subnet_mask=subnet_mask
-                )
+            table.save()
+            
+            
+            # except:
+            #     break
 
-                table.save()
-
-            except:
-                break
+        loop_count = 0
 
         # Saves data to table E 
         for i in range(256):
             loop_count += 1
-            try:
-                if loop_count < 129:
-                    table, created = TableE.objects.get_or_create(
-                        first_octet=first_octet,
-                        second_octet=second_octet,
-                        third_octet=third_octet,
-                        fourth_octet=fourth_octet,
-                        subnet_mask=subnet_mask
-                    )
+            if loop_count <= 128:
+                table, created = TableE.objects.get_or_create(
+                    first_octet=table_e_first_octet,
+                    second_octet=table_e_second_octet,
+                    third_octet=table_e_third_octet,
+                    fourth_octet=str(int(table_e_fourth_octet) + fourth_octet_count),
+                    subnet_mask=table_e_subnet_mask
 
-                else:
-                    third_octet_count += 1
-
-                    fourth_octet_count += 2
-                    
-                    table, created = TableE.objects.get_or_create(
-                    first_octet=first_octet,
-                    second_octet=second_octet,
-                    third_octet=str(int(third_octet) + third_octet_count),
-                    fourth_octet=str(int(fourth_octet) + fourth_octet_count),
-                    subnet_mask=subnet_mask
                 )
+                
+                fourth_octet_count += 2
 
+                table.save()
+
+            elif loop_count > 128:
+                
+                
+                table, created = TableE.objects.get_or_create(
+                first_octet=table_e_first_octet,
+                second_octet=table_e_second_octet,
+                third_octet=str(int(table_e_third_octet) + third_octet_count),
+                fourth_octet=str(int(table_e_fourth_octet) + fourth_octet_count2),
+                subnet_mask=table_e_subnet_mask)
+
+
+                fourth_octet_count2 += 2
             
                 table.save()
 
-            except:
-                break
+            # except:
+            #     break
         
     
         third_octet_count2 = 0
 
         # Saves data to table F
         for i in range(64):
-
-            try:
             
-                table, created = TableF.objects.get_or_create(
-                        first_octet=first_octet,
-                        second_octet=second_octet,
-                        third_octet=str(int(third_octet) + int(third_octet_count2)),
-                        fourth_octet=fourth_octet,
-                        subnet_mask=subnet_mask,
-                        variable=variable
-                )
+            table, created = TableF.objects.get_or_create(
+                    first_octet=table_f_first_octet,
+                    second_octet=table_f_second_octet,
+                    third_octet=str(int(table_f_third_octet) + int(third_octet_count2)),
+                    fourth_octet=table_f_fourth_octet,
+                    subnet_mask=table_f_subnet_mask,
+                    variable=variable
+            )
 
-                table.save()
+            table.save()
 
-                third_octet_count2 += 4
+            third_octet_count2 += 4
             
-            except:
-                break
+            # except:
+            #     break
 
         # Saves data to table G
         tableg, created = TableG.objects.get_or_create(
@@ -142,7 +158,7 @@ def input_page(request):
         tableg.save()
         
 
-    context = {'c' : choices}
+    context = {'form' : form}
     return render(request, 'input-page.html', context)
 
 # Handles the logic for the generate page

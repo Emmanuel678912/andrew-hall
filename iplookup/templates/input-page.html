@@ -28,49 +28,108 @@
             <div class="row my-5">
                 <div class="col">
                     <label class="form-label">Table C Column 2</label>
-                    <input type="text" style="background-color: yellow;" class="form-control" name="c-column-2">
+                    {{form.column2}}
                 </div>
 
                 <div class="col">
                     <label class="form-label">Table C Column 3</label>
-                    <input type="text" style="background-color: yellow;" class="form-control" name="c-column-3">
+                    {{form.column3}}
                 </div>
 
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Table C Column 4</label>
-                    <select class="form-control" id="exampleFormControlSelect1" style="background-color: yellow;">
-                    {% for choice in c %}
-                      <option>{{choice}}</option>
-                    {% endfor %}
-                    </select>
+                <div class="col">
+                    <label class="form-label">Table C Column 4</label>
+                        {{form.column4}}
                 </div>
-
             </div>
 
             <div class="row my-5">
+
+            <p class="h2">Table D Subnet</p>
                 <div class="col">
                     <label class="form-label">First Octet</label>
-                    <input type="text" style="background-color: yellow;" class="form-control" name="first">
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-d-first">
                 </div>
                 
                 <div class="col">
                     <label class="form-label">Second Octet</label>
-                    <input type="text" style="background-color: yellow;" class="form-control" name="second">
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-d-second">
                 </div>
                 
                 <div class="col">
                     <label class="form-label">Third Octet</label>
-                    <input type="text" style="background-color: yellow;" class="form-control" name="third">
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-d-third">
                 </div>
                 
                 <div class="col">
                     <label class="form-label">Fourth Octet</label>
-                    <input type="text" style="background-color: yellow;" class="form-control" name="fourth">
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-d-fourth">
                 </div>
                 
                 <div class="col">
                     <label class="form-label">Subnet Mask</label>
-                    <input type="text" style="background-color: yellow;" class="form-control" name="subnet-mask">
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-d-subnet-mask">
+                </div>
+
+
+            </div>
+
+            <div class="row my-5">
+                <p class="h2">Table E Subnet</p>
+
+                <div class="col">
+                    <label class="form-label">First Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-e-first">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Second Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-e-second">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Third Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-e-third">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Fourth Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-e-fourth">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Subnet Mask</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-e-subnet-mask">
+                </div>
+
+
+            </div>
+
+            <div class="row my-5">
+                <p class="h2">Table F Subnet</p>
+
+                <div class="col">
+                    <label class="form-label">First Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-f-first">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Second Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-f-second">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Third Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-f-third">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Fourth Octet</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-f-fourth">
+                </div>
+                
+                <div class="col">
+                    <label class="form-label">Subnet Mask</label>
+                    <input type="text" style="background-color: yellow;" class="form-control" name="table-f-subnet-mask">
                 </div>
 
 

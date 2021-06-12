@@ -9,9 +9,14 @@ class TableB(models.Model):
     column2 = models.CharField(max_length=255, null=True, blank=True)   
 
 class TableC(models.Model):
+    CHOICES = (
+        ("Value 1", "1"),
+        ("Value 2", "2")
+
+    )
     column2 = models.CharField(max_length=255, null=True, blank=True)
     column3 = models.CharField(max_length=255, null=True, blank=True)
-    column4 = models.CharField(max_length=255, null=True, blank=True)
+    column4 = models.CharField(max_length=255, null=True, blank=True, choices=CHOICES)
  
 
 class TableD(models.Model):
