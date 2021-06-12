@@ -23,7 +23,7 @@
                 </tbody>
                 <tbody class="table hide">
                   {% for row in a %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.column2}}</td>
                     <td>{{row.column3}}</td>
                   </tr>
@@ -51,7 +51,7 @@
                 </tbody>
                 <tbody class="table hide">
                   {% for row in b %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.column2}}</td>
                   </tr>
                   {% endfor %}
@@ -77,7 +77,7 @@
                 </tbody>
                 <tbody class="table hide">
                   {% for row in c %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.column2}}</td>
                     <td>{{row.column3}}</td>
                     <td>{{row.column4}}</td>
@@ -97,7 +97,6 @@
                     <th scope="col">Third Octet</th>
                     <th scope="col">Fourth Octet</th>
                     <th scope="col">Subnet Mask</th>
-                    <th scope="col">Host</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -108,7 +107,7 @@
                 </tbody>
                 <tbody class="table hide">
                   {% for row in d %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.first_octet}}</td>
                     <td>{{row.second_octet}}</td>
                     <td>{{row.third_octet}}</td>
@@ -141,7 +140,7 @@
                 </tbody>
                 <tbody class="table hide">
                   {% for row in e %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.first_octet}}</td>
                     <td>{{row.second_octet}}</td>
                     <td>{{row.third_octet}}</td>
@@ -163,7 +162,6 @@
                     <th scope="col">Third Octet</th>
                     <th scope="col">Fourth Octet</th>
                     <th scope="col">Subnet Mask</th>
-                    <th scope="col">Host</th>
                     <th scope="col">Variable</th>
                   </tr>
                 </thead>
@@ -175,7 +173,7 @@
                 </tbody>
                 <tbody class="table hide">
                   {% for row in f %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.first_octet}}</td>
                     <td>{{row.second_octet}}</td>
                     <td>{{row.third_octet}}</td>
@@ -203,9 +201,9 @@
                     <input type="checkbox" name="table-g" id="table-g" data-toggle="toggle">
                   </td>
                 </tbody>
-                <tbody class="table hide">
+                <tbody class="table hide ">
                   {% for row in g %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.column2}}</td>
                     <td>{{row.column3}}</td>
                   </tr>
@@ -246,7 +244,7 @@
                 <tbody class="table hide">
 
                   {% for row in h %}
-                  <tr>
+                  <tr class="label">
                     <td>{{row.column2}}</td>
                     <td>{{row.column3}}</td>
                     <td>{{row.column4}}</td>
