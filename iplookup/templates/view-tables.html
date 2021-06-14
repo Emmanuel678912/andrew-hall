@@ -26,6 +26,7 @@
                   <tr class="label">
                     <td>{{row.column2}}</td>
                     <td>{{row.column3}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_a' row.id %}">Delete</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -53,6 +54,7 @@
                   {% for row in b %}
                   <tr class="label">
                     <td>{{row.column2}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_b' row.id %}">Delete</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -81,6 +83,7 @@
                     <td>{{row.column2}}</td>
                     <td>{{row.column3}}</td>
                     <td>{{row.column4}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_c' row.id %}">Delete</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -113,6 +116,7 @@
                     <td>{{row.third_octet}}</td>
                     <td>{{row.fourth_octet}}</td>
                     <td>{{row.subnet_mask}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_d' row.id %}">Delete</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -146,6 +150,7 @@
                     <td>{{row.third_octet}}</td>
                     <td>{{row.fourth_octet}}</td>
                     <td>{{row.subnet_mask}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_e' row.id %}">Delete</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -180,6 +185,7 @@
                     <td>{{row.fourth_octet}}</td>
                     <td>{{row.subnet_mask}}</td>
                     <td>{{row.variable}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_f' row.id %}">Delete</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -206,6 +212,7 @@
                   <tr class="label">
                     <td>{{row.column2}}</td>
                     <td>{{row.column3}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_g' row.id %}">Delete</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -261,6 +268,7 @@
                     <td>{{row.column15}}</td>
                     <td>{{row.column16}}</td>
                     <td>{{row.column17}}</td>
+                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_row_h' row.id %}">Delete</a></td>
                   </tr>
                  {% endfor %}
                 </tbody>

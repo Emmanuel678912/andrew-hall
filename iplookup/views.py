@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 
@@ -344,3 +344,113 @@ def view_tables(request):
 
     return render(request, 'view-tables.html', context)
 
+def deleteRowA(request, pk):
+    tablea_row = TableA.objects.get(id=pk)
+    
+    if request.method == 'POST':
+        tablea_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'a-row':tablea_row
+    }
+    return render(request, 'delete-row-a.html', context)
+
+def deleteRowB(request, pk): 
+    tableb_row = TableB.objects.get(id=pk)
+   
+
+    if request.method == 'POST':
+        tableb_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'b-row':tableb_row
+    }
+    return render(request, 'delete-row-b.html', context)
+
+def deleteRowC(request, pk): 
+    tablec_row = TableC.objects.get(id=pk)
+   
+
+    if request.method == 'POST':
+        tablec_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'c-row':tablec_row
+    }
+    return render(request, 'delete-row-c.html', context)
+
+def deleteRowD(request, pk): 
+    tabled_row = TableD.objects.get(id=pk)
+   
+
+    if request.method == 'POST':
+        tabled_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'd-row':tabled_row
+    }
+    return render(request, 'delete-row-d.html', context)
+
+def deleteRowE(request, pk): 
+    tablee_row = TableE.objects.get(id=pk)
+   
+
+    if request.method == 'POST':
+        tablee_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'e-row':tablee_row
+    }
+    return render(request, 'delete-row-e.html', context)
+
+def deleteRowF(request, pk): 
+    tablef_row = TableF.objects.get(id=pk)
+   
+
+    if request.method == 'POST':
+        tablef_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'f-row':tablef_row
+    }
+    return render(request, 'delete-row-f.html', context)
+
+def deleteRowG(request, pk): 
+    tableg_row = TableG.objects.get(id=pk)
+   
+
+    if request.method == 'POST':
+        tableg_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'g-row':tableg_row
+    }
+    return render(request, 'delete-row-g.html', context)
+
+def deleteRowH(request, pk): 
+    tableh_row = TableH.objects.get(id=pk)
+   
+
+    if request.method == 'POST':
+        tableh_row.delete()
+        redirect('view_tables')
+
+
+    context = {
+        'h-row':tableh_row
+    }
+    return render(request, 'delete-row-h.html', context)
