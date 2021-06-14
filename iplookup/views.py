@@ -349,7 +349,7 @@ def deleteRowA(request, pk):
     
     if request.method == 'POST':
         tablea_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
@@ -363,7 +363,7 @@ def deleteRowB(request, pk):
 
     if request.method == 'POST':
         tableb_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
@@ -377,7 +377,7 @@ def deleteRowC(request, pk):
 
     if request.method == 'POST':
         tablec_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
@@ -391,7 +391,7 @@ def deleteRowD(request, pk):
 
     if request.method == 'POST':
         tabled_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
@@ -405,7 +405,7 @@ def deleteRowE(request, pk):
 
     if request.method == 'POST':
         tablee_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
@@ -419,7 +419,7 @@ def deleteRowF(request, pk):
 
     if request.method == 'POST':
         tablef_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
@@ -433,7 +433,7 @@ def deleteRowG(request, pk):
 
     if request.method == 'POST':
         tableg_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
@@ -447,7 +447,7 @@ def deleteRowH(request, pk):
 
     if request.method == 'POST':
         tableh_row.delete()
-        redirect('view_tables')
+        return redirect('view_tables')
 
 
     context = {
