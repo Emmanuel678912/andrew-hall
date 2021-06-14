@@ -113,6 +113,8 @@ and click on the "View Tables" link to view the database tables.
     - On Windows: type "cd venv/Scripts"
     - Type activate.bat. 
     - If the virtual environement is active you will see (venv) in the command line.
+    - On Mac or Linux type "source venv/bin/activate"
+
 
 2. Cd into the project directory where the manage.py file is located.
 
@@ -148,6 +150,7 @@ and click on the "View Tables" link to view the database tables.
     - On Windows: type "cd venv/Scripts"
     - Type activate.bat. 
     - If the virtual environement is active you will see (venv) in the command line.
+    - On Mac or Linux type "source venv/bin/activate"
 
 2. Cd into the project directory where the manage.py file is located.
 
